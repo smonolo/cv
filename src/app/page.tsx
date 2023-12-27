@@ -56,7 +56,7 @@ export default function Page() {
                   variant="outline"
                   size="icon"
                 >
-                  <a href={social.url}>
+                  <a href={social.url} target="_blank">
                     <social.icon className="h-4 w-4" />
                   </a>
                 </Button>
@@ -75,7 +75,6 @@ export default function Page() {
               ) : null}
             </div>
           </div>
-
           <Avatar className="h-28 w-28">
             <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
             <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
@@ -98,7 +97,6 @@ export default function Page() {
                       <a className="hover:underline" href={work.link}>
                         {work.company}
                       </a>
-
                       <span className="inline-flex gap-x-1">
                         {work.badges.map((badge) => (
                           <Badge
@@ -115,7 +113,6 @@ export default function Page() {
                       {work.start} - {work.end}
                     </div>
                   </div>
-
                   <h4 className="font-mono text-sm leading-none">
                     {work.title}
                   </h4>
@@ -177,9 +174,9 @@ export default function Page() {
             url: RESUME_DATA.personalWebsiteUrl,
             title: "Personal Website",
           },
-          ...RESUME_DATA.contact.social.map((socilaMediaLink) => ({
-            url: socilaMediaLink.url,
-            title: socilaMediaLink.name,
+          ...RESUME_DATA.contact.social.map((socialMediaLink) => ({
+            url: socialMediaLink.url,
+            title: socialMediaLink.name,
           })),
         ]}
       />
